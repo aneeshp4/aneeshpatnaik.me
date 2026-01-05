@@ -24,3 +24,15 @@ export interface SectionComponent {
   Component: React.ComponentType;
 }
 
+export interface AboutContent {
+  bio: string;
+  highlights: string[];
+  profileImage?: string;
+  socialLinks: {
+    github?: string;
+    linkedin?: string;
+    email?: string;
+    twitter?: string;
+  };
+}
+

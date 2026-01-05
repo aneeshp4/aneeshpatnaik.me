@@ -23,7 +23,7 @@ export const Section = ({ id, title, children, className = '' }: SectionProps) =
     >
       <div className='max-w-6xl mx-auto'>
         <motion.h2
-          className='text-4xl md:text-5xl font-bold mb-12 text-text-brown'
+          className='text-4xl md:text-5xl font-bold mb-12 text-text-brown text-center'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -8,6 +8,7 @@
   --color-accent-yellow: #FFF4C9;
   --color-text-brown: #5C4033;
   --color-border-light: #E8DCC4;
+  --color-scope-black: #000000;
 }
 
 * {
@@ -28,4 +29,22 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Accessibility: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .scope-hero {
+    clip-path: none !important;
+    position: relative !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
