@@ -46,7 +46,7 @@ export const Skills = () => {
   return (
     <Section id='skills' title='Skills'>
       <motion.div
-        className='space-y-8'
+        className='space-y-8 w-full'
         variants={containerVariants}
         initial='hidden'
         whileInView='visible'
@@ -56,11 +56,12 @@ export const Skills = () => {
           <motion.div
             key={index}
             variants={categoryVariants}
+            className='text-center'
           >
             <h3 className='text-2xl font-semibold text-text-brown mb-4'>
               {category.category}
             </h3>
-            <div className='flex flex-wrap gap-3'>
+            <div className='flex flex-wrap gap-3 justify-center'>
               {category.skills.map((skill, i) => {
                 const colors = ['bg-accent-peach', 'bg-accent-coral', 'bg-accent-yellow'];
                 const colorClass = colors[i % colors.length];
@@ -68,8 +69,8 @@ export const Skills = () => {
                   <motion.span
                     key={i}
                     className={`${colorClass} text-text-brown px-4 py-2 rounded-full font-medium`}
-                    whileHover={{ 
-                      scale: 1.05, 
+                    whileHover={{
+                      scale: 1.05,
                       y: -3,
                       transition: { duration: 0.2 }
                     }}

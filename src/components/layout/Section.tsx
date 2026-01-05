@@ -12,7 +12,7 @@ export const Section = ({ id, title, children, className = '' }: SectionProps) =
   return (
     <motion.section
       id={id}
-      className={`min-h-screen py-20 px-6 md:px-12 lg:px-24 ${className}`}
+      className={`min-h-screen py-20 px-6 md:px-12 lg:px-24 flex items-center justify-center ${className}`}
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: '-100px' }}
@@ -21,7 +21,7 @@ export const Section = ({ id, title, children, className = '' }: SectionProps) =
         ease: [0.22, 1, 0.36, 1]
       }}
     >
-      <div className='max-w-6xl mx-auto'>
+      <div className='max-w-6xl w-full'>
         <motion.h2
           className='text-4xl md:text-5xl font-bold mb-12 text-text-brown text-center'
           initial={{ opacity: 0, y: 20 }}

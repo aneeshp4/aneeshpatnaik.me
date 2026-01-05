@@ -17,8 +17,8 @@ const aboutData: AboutContent = {
 
 export const About = () => {
   return (
-    <Section id='about' title='About Me'>
-      <div className='max-w-4xl mx-auto'>
+    <Section id='about' title='About Me' className='mt-96'>
+      <div className='w-full'>
         {/* Bio */}
         <div className='mb-12'>
           <p className='text-lg md:text-xl text-text-brown leading-relaxed text-center'>

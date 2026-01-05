@@ -41,7 +41,7 @@ export const Projects = () => {
   return (
     <Section id='projects' title='Projects'>
       <motion.div
-        className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
+        className='flex flex-wrap gap-6 justify-center'
         variants={containerVariants}
         initial='hidden'
         whileInView='visible'
@@ -53,17 +53,17 @@ export const Projects = () => {
             variants={cardVariants}
             whileHover={{ scale: 1.03, y: -5 }}
             transition={{ duration: 0.2 }}
-            className='bg-bg-secondary border border-border-light rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col'
+            className='bg-bg-secondary border border-border-light rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col text-center w-full max-w-md'
           >
             <h3 className='text-2xl font-bold text-text-brown mb-3'>
               {project.name}
             </h3>
-            
+
             <p className='text-text-brown mb-4 flex-grow'>
               {project.description}
             </p>
 
-            <div className='flex flex-wrap gap-2 mb-4'>
+            <div className='flex flex-wrap gap-2 mb-4 justify-center'>
               {project.technologies.map((tech, i) => {
                 const colors = ['bg-accent-peach', 'bg-accent-coral', 'bg-accent-yellow'];
                 const colorClass = colors[i % colors.length];
@@ -78,7 +78,7 @@ export const Projects = () => {
               })}
             </div>
 
-            <div className='flex gap-4 mt-auto'>
+            <div className='flex gap-4 mt-auto justify-center'>
               {project.githubLink && (
                 <a
                   href={project.githubLink}

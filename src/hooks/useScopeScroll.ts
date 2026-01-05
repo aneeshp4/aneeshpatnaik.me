@@ -4,6 +4,7 @@ interface ScopeScrollReturn {
   scrollYProgress: MotionValue<number>;
   circleRadius: MotionValue<number>;
   overlayOpacity: MotionValue<number>;
+  sectionsOpacity: MotionValue<number>;
 }
 
 export const useScopeScroll = (): ScopeScrollReturn => {
@@ -25,9 +26,17 @@ export const useScopeScroll = (): ScopeScrollReturn => {
     [1, 0]
   );
 
+  // Fade in sections right as intro fades out
+  const sectionsOpacity = useTransform(
+    scrollYProgress,
+    [0.03, 0.08],
+    [0, 1]
+  );
+
   return {
     scrollYProgress,
     circleRadius,
-    overlayOpacity
+    overlayOpacity,
+    sectionsOpacity
   };
 };

@@ -45,7 +45,7 @@ export const Experience = () => {
   return (
     <Section id='experience' title='Experience'>
       <motion.div
-        className='space-y-8'
+        className='space-y-8 w-full'
         variants={containerVariants}
         initial='hidden'
         whileInView='visible'
@@ -55,23 +55,21 @@ export const Experience = () => {
           <motion.div
             key={index}
             variants={itemVariants}
-            className='bg-bg-secondary border border-border-light rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow'
+            className='bg-bg-secondary border border-border-light rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow text-center'
           >
-            <div className='flex flex-col md:flex-row md:justify-between md:items-start mb-4'>
-              <div>
-                <h3 className='text-2xl font-bold text-text-brown mb-1'>
-                  {exp.title}
-                </h3>
-                <p className='text-xl text-accent-coral font-medium'>
-                  {exp.company}
-                </p>
-              </div>
-              <div className='text-accent-peach mt-2 md:mt-0 md:text-right'>
+            <div className='mb-4'>
+              <h3 className='text-2xl font-bold text-text-brown mb-1'>
+                {exp.title}
+              </h3>
+              <p className='text-xl text-accent-coral font-medium'>
+                {exp.company}
+              </p>
+              <div className='text-accent-peach mt-2'>
                 <p className='font-medium'>{exp.dates}</p>
                 <p className='text-sm'>{exp.location}</p>
               </div>
             </div>
-            <ul className='space-y-2'>
+            <ul className='space-y-2 text-left max-w-2xl mx-auto'>
               {exp.description.map((item, i) => (
                 <li key={i} className='text-text-brown flex items-start'>
                   <span className='text-accent-coral mr-2'>•</span>
